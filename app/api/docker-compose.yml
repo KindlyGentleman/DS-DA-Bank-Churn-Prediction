@@ -1,0 +1,18 @@
+# Specify Docker Compose file version
+version: "3.7"
+
+# Define services
+services:
+  # Define mlapp service
+  mlapp:
+    # Set container name
+    container_name: mlapp
+    # Set image to use for container
+    image: kindlygentleman/mlapp
+    # Map container port 5000 to host port 5000
+    ports:
+      - "5000:5000"
+    # Define build context and Dockerfile location
+    build:
+      context: .
+      dockerfile: Dockerfile
